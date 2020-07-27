@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+<head>
+        <title>Natraj Dance Competetion</title>
+        <link rel="stylesheet" type="text/css" href="style8.css">
+</head>
+<body ><header>
+    <div class="header">
+            <div class="logo">
+	<img src="q.png">
+            </div>
+            <div class="title">
+	Natraj Dance Competition
+            </div>
+    </div>
+    <div class="rel">
+		<div id="p">
+				<span onclick="show('Homebtn');">Home</span>
+		</div>		
+		<div id="p1">
+			<span onclick="show('Registrationbtn');">Registration Form</span>
+		</div>
+		<div id="p2">
+			<span onclick="show('Showregistrationbtn');">Show Registrants</span>
+        </div>
+    </div>
+   
+   <div class="page" id="Homebtn">
+	<h2>Welcome to Natraj Dance Compitetion</h2>
+	<p> Free Registration !! <br>
+	Location : Kala Kendra studio, Pune <br>
+	Organizer : MLA Mr. Pawar <br>
+	Date : 1 August 2020 <br>
+	Time : 10:00 AM to 4:00 PM <br>
+	Prize Distribution :<br>
+	First prize 10,000 ₹ <br>
+	Second prize 7,000 ₹ <br>
+    Third prize 5,000 ₹ <br>
+    Note:<br>
+    Age limit is 10-30 years <br>
+    Competition is only for Pune residents <br>
+	</p> 
+   </div>
+   
+	<div class="page" id="Registrationbtn">
+	<form name="form"  id="form1"> 
+        <div class="input">Name: <input id="name" name="name1" type="text" placeholder="Enter full name.."></div><br>
+        <span id="nam1"></span>
+        <div class="input">
+            Gender: <input id="gender" type="radio" name="r" value="male">Male
+                    <input type="radio" name="r" value="female">Female</div><br>
+            <span id="gen1"></span>
+        <div class="input">Email Id: <input id="email" name="email1" type="text" placeholder="Email Id.."></div><br>	
+        <span id="mail"></span>
+        <div class="input">Age: <input id="age" name="age1" type="text" placeholder="Your age.."></div><br>
+        <span id="ag"></span>
+        <div class="input">Mobile No: <input id="mobile" name="mobile1" type="text" placeholder="mobile no.."></div><br>
+        <span id="mob"></span>
+        <div class="input">
+            State:
+            <select id="state" name="state1">
+                <option value =""disabled selected hidden>Select area from which you live :</option>
+                <option value="pune">pune</option>
+                <option value="pimpro">pimpri</option>
+                <option value="chinchwad">chinchwad</option>
+                <option value="bhosari">bhosari</option>
+                <option value="kharadi">kharadi</option>
+                <option value="katraj">katraj</option>
+                <option value="nigdi">nigdi</option>
+                <option value="kondhwa">Kondhwa</option>
+            </select></div><br>
+            <span id="stat"></span>
+            <input type="submit" value="submit" id="register">	
+	</form>
+    </div>
+
+
+
+	<div class="page" id="Showregistrationbtn">
+        <table id="display">
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Email Id</th>
+                <th>Age</th>
+                <th>Mobile No.</th>
+                <th>Area</th>
+            </tr>
+    </div>
+</header>
+
+<script>
+    var list1=[];
+          var list2=[];
+          var list3=[];
+          var list4=[];
+          var list5=[];
+          var list6=[];
+          
+          var n=1;
+   var x=0;
+
+   function show(elementID) {
+    // try to find the requested page and alert if it's not found
+    var ele = document.getElementById(elementID);
+    if (!ele) {
+        alert("no such element");
+        return;
+    }
+
+    var pages = document.getElementsByClassName('page');
+    for(var i = 0; i < pages.length; i++) {
+        pages[i].style.display = 'none';
+    }
+
+    // then show the requested page
+    ele.style.display = 'block';
+}
+
+function checkEmail(str1)
+{
+    var posat=str1.indexOf("@");
+    var posdot=str1.indexOf(".");
+    
+    if(posat!=-1 && posdot!=-1)
+    {
+        if(posat>=1 && (posdot-posat)>=2 && (str1.length-1-posdot)>=2 && (str1.length-1-posdot)<=5)
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
+}
+
+
+const validateForm = (ev) =>{
+ev.preventDefault();
+    var nam=document.form.name1.value;
+    var a=document.form.r.value;
+    var id=document.form.email1.value;
+    var ages=document.form.age1.value;
+    var no=document.form.mobile1.value;
+    var st=document.form.state1.value;
+    
+
+    if(nam=="" || nam==null)
+    {
+        document.getElementById("nam1").innerHTML="Name should not be blank";
+        return false; 
+    }
+    else if(nam.length<3)
+    {
+        document.getElementById("nam1").innerHTML="Name length should be 3-30";
+        return false; 
+    }
+    else if(nam.length>30)
+    {
+        document.getElementById("nam1").innerHTML="Name length should be 3-30";
+        return false; 
+    }
+    else if(isNaN(nam)==false)
+    {
+        document.getElementById("nam1").innerHTML="Name should not be numeric";
+        return false; 
+    }
+    else if(a=="" || a==null)
+    {
+        document.getElementById("gen1").innerHTML="should not be empty";
+        return false;
+    }
+    
+    else if(id=="" || id==null)
+    {
+        document.getElementById("mail").innerHTML="Email should not be empty";
+        return false;
+    }
+    else if(!checkEmail(id))
+    {
+        document.getElementById("mail").innerHTML="Email not valid";
+        return false;
+    }
+    else if(ages < 10 )
+    {
+        document.getElementById("ag").innerHTML="You are not eligible";
+        return false;
+    }
+    else if(ages > 30 )
+    {
+        document.getElementById("ag").innerHTML="You are not eligible";
+        return false;
+    }
+    else if(no=="" || no==null)
+    {
+        document.getElementById("mob").innerHTML="Mobile no. should not be empty";
+        return false;
+    }
+    else if(no.length!=10)
+    {
+        document.getElementById("mob").innerHTML="Please enter 10 digit mobile no.";
+        return false;
+    }
+    
+   else if(st==0)
+    {
+        document.getElementById("stat").innerHTML="Please select area";
+        return false;
+    }
+   else
+	 {
+                  
+                  var AddRown=document.getElementById('display');
+                  var NewRow=AddRown.insertRow(n);
+                  
+                  list1[x]=document.form.name.value;
+                  list2[x]=document.form.gender.value;
+                  list3[x]=document.form.email.value;
+                  list4[x]=document.form.age.value;
+                  list5[x]=document.form.mobile.value;
+                  list6[x]=document.form.state.value;
+                  
+                  
+                  var cel1=NewRow.insertCell(0);
+                  var cel2=NewRow.insertCell(1);
+                  var cel3=NewRow.insertCell(2);
+                  var cel4=NewRow.insertCell(3);
+                  var cel5=NewRow.insertCell(4);
+                  var cel6=NewRow.insertCell(5);
+                  
+                  
+                  cel1.innerHTML=list1[x];
+                  cel2.innerHTML=list2[x];
+                  cel3.innerHTML=list3[x];
+                  cel4.innerHTML=list4[x];
+                  cel5.innerHTML=list5[x];
+                  cel6.innerHTML=list6[x];
+                  
+                  
+                  n++;
+                  x++;
+                 
+                  alert("successfully registered");
+                  document.querySelector("form1").reset();
+               }
+}
+          document.addEventListener("DOMContentLoaded", ()=>{
+              document.getElementById("register").addEventListener("click", validateForm);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+*{
+	box-sizing: box-border;
+	font-family:berlin sans fb;
+}
+
+.header{
+	position: relative;
+	margin:10px 0;
+	padding: 5px;
+	overflow: auto;
+}
+
+
+.logo img{
+	padding:5px;
+	width:60px;
+	height:85px;
+	float: left;
+	margin-left:25vw;
+}
+
+.title{
+	text-align:center;
+
+	color:white;
+	position:absolute;
+	bottom:10px;
+	display: inline-block;
+	font-size: 4vw;
+}
+
+header{
+background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(../background.jpg);
+height:100vh;
+background-size:cover;
+background-position:center;
+}
+
+
+
+#span {
+	text-decoration:underline;
+	color:blue;
+	cursor:pointer;
+}
+#p span{
+	font-size:20px;
+	padding:5px 40px 5px 40px;
+	background-color:transparent;
+	color:white;
+	position:absolute;
+	bottom:595px;
+	left:450px;
+	font-weight: bold;
+	transition: 0.6s ease;
+
+}
+#p span:hover {
+	background-color: white;
+	color: black;
+}
+
+#p1 span{
+	font-size:20px;
+	padding:5px 40px 5px 40px;
+	background-color: transparent;
+	color:white;
+	position:absolute;
+	bottom:595px;
+	left:603px;
+	font-weight: bold;
+	transition: 0.6s ease;
+
+}
+#p1 span:hover {
+	background-color: white;
+	color: black;
+}
+
+#p2 span{
+	font-size:20px;
+	padding: 5px 40px 5px 40px;
+	background-color: transparent;
+	color:white;
+	position:absolute;
+	bottom:595px;
+	left:870px;
+	font-weight: bold;
+	transition: 0.6s ease;
+
+}
+#p2 span:hover {
+	background-color: white;
+	color: black;
+}
+
+
+
+#Homebtn{
+
+}
+
+#Homebtn h2{
+margin-top:90px;
+text-align:center;
+color:white;
+}
+
+#Homebtn p{
+font-size:2vw;
+text-align:center;
+color:white;
+padding:15px;
+}
+
+#Registrationbtn{
+	display:none;
+}
+
+#Registrationbtn form
+{
+
+font-size:1.5vw;
+color:white;
+margin:50px 370px;
+padding:50px 225px;
+background-color:transparent;
+
+}
+
+#name{
+	font-size: 15px;
+	box-sizing: border-box;
+	padding:3px;
+}
+
+#email{
+	font-size: 15px;
+	box-sizing: border-box;
+	padding:3px;
+}
+
+#age{
+	font-size: 15px;
+	box-sizing: border-box;
+	padding:3px;
+}
+
+#mobile{
+	font-size: 15px;
+	box-sizing: border-box;
+	padding:3px;
+}
+
+#state{
+	font-size: 15px;
+	box-sizing: border-box;
+	padding:3px;
+}
+span{
+color:yellow;
+}
+
+
+#Showregistrationbtn{
+	display:none;
+}
+table{
+	border-collapse:collapse;
+	width:50%;
+	margin:50px auto;
+	background-color:burlywood;
+}
+
+table, th, td{
+	border: 2px solid black;
+	padding:5px;
+}
+
+th{
+	font-size: 20px;
+	font-weight:700;
+	color:#004d00;
+}
+td{
+	font-size: 15px;
+	color : crimson;
+	font-weight: 400;
+
+}
